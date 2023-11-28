@@ -1,0 +1,42 @@
+\renewcommand{\maketitle}{
+	\begin{center}
+		
+		\pagestyle{empty}
+		%\phantom{.}  %necessary to add space on top before the title
+		{\LARGE Philosophische Fakultät der Rheinischen Friedrich-Wilhelms-Universität Bonn}
+		\vfill
+		{Master-Arbeit zur Erlangung des akademischen Grades Master of Arts (M.A.) \\
+		im Studiengang Asienwissenschaften}\\ 
+		%{\LARGE }\\
+		\vspace{3cm}
+		{\LARGE \@title\par}
+		\vfill
+		\begin{singlespace}
+		Vorgelegt von\\
+		\begin{flushleft}
+		Max Mustermann\\
+		Musterstaße 11\\
+		12345 Musterstadt\\
+		Tel.: 01234 56789\\
+		E-Mail: s5tmamust@uni-bonn.de\\
+		Matrikelnr. 1234567\\
+		0. Fachsemester\\
+	    \vspace{36pt}
+	    Themensteller/in: Otto Normalerverbraucher\\
+        Zweitgutachter/in: Tarō Yamada  \\
+		Abgabe: \@date
+		\end{flushleft}
+		%if you want something in the bottom of the page just use /vfill before that.
+		\end{singlespace}
+	\end{center}
+}
+\makeatother
+\newcommand{\mytitle}{Titel der Arbeit}
+
+
+\begin{titlepage}%Titelseite
+\author{Max Mustermann}
+\setlength\parindent{24pt} %Zeileneinzug
+\title{\rmfamily \mytitle}
+\maketitle
+\end{titlepage}

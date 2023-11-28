@@ -1,0 +1,25 @@
+\section{Einführung}
+
+Kanji (漢字) sind möglich.
+Weitere Sprachen sind auch verfügbar, siehe dazu das CJK Paket \url{https://ctan.org/pkg/cjk}.
+Sowie Refernzen auf Abbildungen \ref{fig:Diebstahl in der Fischerei}. Wenn man die Zahl anklickt, wird man zur Abbildung geleitet.
+\section{Weitere Beispiele}
+textsc wird für \textsc{Kapitälchen} genutzt.
+textsl für \textsl{geneigten Text}.
+\\
+\begin{addmargin}[50pt]{50pt}Bei längeren Zitaten muss man das Zitat als Block einrücken.
+Das macht man mit \textbackslash begin\{addmargin\}[50pt]\{50pt\} und end\{addmargin\}.
+Vergesst aber bei Befehlen nicht das Blackslash vor dem jeweiligen Befehl.\\  
+\end{addmargin}
+
+\enquote{Für Zitate wird enqoute benutzt}.
+
+\subsection{\textsl{Unterkapitel}} 
+
+Normale Fußnoten sind möglich\footnote{Fußnote}.
+Möchte man aber auf eine Fußnote später erneut verweisen, kann man footnoteremember benutzen\footnoteremember{label123}{Dies ist eine Fußnote auf die erneut verwiesen werden kann.
+Sie wird normal gezählt wie die anderen Fußnoten auch.
+Einer footnoteremember muss man ein Label geben, damit sie von anderen footnoteremeber unterschieden werden kann.}.
+\newpage
+Auf dieser Seite können wir auf die Fußnote mit footnoterecall erneut verweisen \footnoterecall{label123}.
+Mit \mbox{newpage} kann man eine neue Seite befehlen. Mit mbox kann man falsch getrennte Wörter wieder zusammenschreiben.

@@ -1,0 +1,53 @@
+\documentclass[ngerman,numbers=endperiod]{scrartcl} %zweites argument für punkt nach section number
+\KOMAoptions{fontsize=12pt, paper=a4}
+\KOMAoptions{DIV=18} 
+\usepackage{mathptmx}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2cm]{geometry}
+\usepackage[onehalfspacing]{setspace}     %Zeilenabstand
+\usepackage[utf8]{inputenc}               % Direkte Eingabe von ä usw.
+\usepackage[T1]{fontenc}                  % Font Kodierung für die Ausgabe
+\usepackage{babel}                        % Verschiedenste sprach-spezifische Extras
+\usepackage[autostyle=true]{csquotes}     % Intelligente Anführungszeichen
+\usepackage{times}              % Schönere Schriftart
+\usepackage{graphicx}
+\usepackage{tocloft}
+\usepackage{caption}
+\usepackage{CJKutf8} %japanisch unterstützung
+\usepackage[hyphens]{url} %url zeilenumbruch
+\usepackage[pdfborder={0 0 0}]{hyperref} 
+\usepackage{hyphenat} %silbentrennung für literaturverzeichnis deaktivieren
+\urlstyle{same}
+
+%???? bei komischen fehlermeldungen einfach erhöhen
+\maxdeadcycles=500 %sonst ggf tocloft entfernen
+%erlaube mehr floats / Bilder
+\extrafloats{250}
+%Inhaltsverzeichenis Settings (unterstützt Kanji für section und subsection)
+\makeatletter
+\renewcommand*\l@section[2]{\@dottedtocline{1}{0em}{1em}{\fontsize{12}{12}\rmfamily\begin{CJK}{UTF8}{min}#1\end{CJK}}{#2}}
+\renewcommand*\l@subsection[2]{\@dottedtocline{1}{1em}{2.3em}{\begin{CJK}{UTF8}{min}#1\end{CJK}}{#2}}
+\renewcommand\numberline[1]{\hb@xt@\@tempdima{#1.\hfil}}
+\renewcommand{\cfttoctitlefont}{\rmfamily\huge}
+%Mehrmals refernzierbare fußnoten mit footnoteremeber{label}{text}
+%und footnoterecall{label}
+\interfootnotelinepenalty=10000 %erlaubte längere fußnoten
+%footnoterecall und remember
+\newcommand{\footnoteremember}[2]{%
+\footnote{#2\label{#1}}%
+\newcounter{#1}%
+\setcounter{#1}{\value{footnote}}%
+}
+\newcommand{\footnoterecall}[1]{%
+\hyperref[#1]{\footnotemark[\value{#1}]}%
+}
+%Abstand vor Kapitel, tocstyle empty sorgt für keine auswirkung auf inhaltsverzeichnis
+\RedeclareSectionCommand[beforeskip=24pt,tocstyle=]{section} 
+%Titel
+
+%Section und Subsection in Rmfamily
+\setkomafont{subsection}{\rmfamily}
+\setkomafont{section}{\fontsize{12}{12}\rmfamily}
+\renewcommand{\cftsecfont}{\rmfamily}
+%Seitenzahl höhe
+\setlength{\footskip}{1cm}
+%------------------------
